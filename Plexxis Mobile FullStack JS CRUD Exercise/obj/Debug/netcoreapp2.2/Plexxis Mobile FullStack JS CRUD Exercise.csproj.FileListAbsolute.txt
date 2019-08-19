@@ -1,0 +1,27 @@
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.deps.json
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.runtimeconfig.json
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.runtimeconfig.dev.json
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.dll
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.pdb
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.csproj.CoreCompileInputs.cache
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.RazorAssemblyInfo.cache
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.RazorAssemblyInfo.cs
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.AssemblyInfoInputs.cache
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.AssemblyInfo.cs
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.RazorTargetAssemblyInfo.cache
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.dll
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.pdb
+C:\Users\wwang\Desktop\Interview\Plexxis Mobile FullStack JS CRUD Exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.csprojAssemblyReference.cache
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.deps.json
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.runtimeconfig.json
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.runtimeconfig.dev.json
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.dll
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\bin\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.pdb
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.csproj.CoreCompileInputs.cache
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.RazorAssemblyInfo.cache
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.RazorAssemblyInfo.cs
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.AssemblyInfoInputs.cache
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.AssemblyInfo.cs
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.RazorTargetAssemblyInfo.cache
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.dll
+C:\Users\wwang\Desktop\Interview\plexxis-mobile-fullstack-js-crud-exercise\Plexxis Mobile FullStack JS CRUD Exercise\obj\Debug\netcoreapp2.2\Plexxis Mobile FullStack JS CRUD Exercise.pdb
