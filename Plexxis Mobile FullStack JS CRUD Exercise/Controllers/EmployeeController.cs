@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +14,7 @@ using Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Models;
 
 namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Controllers
 {
+    [EnableCors("AllowMyOrigin")]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase

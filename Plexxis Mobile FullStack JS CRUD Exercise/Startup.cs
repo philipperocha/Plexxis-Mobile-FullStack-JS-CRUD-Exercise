@@ -28,6 +28,12 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowMyOrigin",
+                //builder => builder.WithOrigins("http://localhost:3001/"));
+                builder => builder.AllowAnyOrigin());
+            });
             services.AddDbContext<EmployeeContext>(opt =>
                 opt.UseInMemoryDatabase("Employee"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -47,6 +53,7 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowMyOrigin");
             app.UseMvc();
         }
     }
