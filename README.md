@@ -19,10 +19,12 @@ Create a simple but __impressive__ (looks good, works well, has intuitive design
 
 ## Getting Started
 The frontend was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). 
+
 * To run frontend, use command line and run "npm start". 
 * You have option to use any other framework, such as Angular, Vue or Knockout. 
 
 The backend was scaffolded with ASP.NET Core. 
+
 * To run server, open /backend/Plexxis Mobile FullStack JS CRUD Exercise.sln and run the app. 
 * If it is difficult to setup environment or SDKs, you can build a server by your own, or choose ASP.NET. 
 
