@@ -26,7 +26,7 @@ The frontend was bootstrapped with [Create React App](https://github.com/faceboo
 The backend was scaffolded with ASP.NET Core. 
 
 * To run server, open /backend/Plexxis Mobile FullStack JS CRUD Exercise.sln and run the app. 
-* If it is difficult to setup environment or SDKs, you can build a server by your own, or choose ASP.NET. 
+* You can choose different web framework for example ASP.NET, and build server on your own. 
 
 ## Getting it Done
 * You are free to use whatever libraries that you want. Be prepared to defend your decisions.
