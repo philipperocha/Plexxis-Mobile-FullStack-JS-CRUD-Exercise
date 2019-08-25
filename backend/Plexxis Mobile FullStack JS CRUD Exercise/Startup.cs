@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-
 using Microsoft.EntityFrameworkCore;
-using Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Models;
 
 namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise
 {
@@ -28,14 +20,12 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy("AllowMyOrigin",
-            //    //builder => builder.WithOrigins("http://localhost:3001/"));
-            //    builder => builder.AllowAnyOrigin());
-            //});
-            //services.AddDbContext<EmployeeContext>(opt =>
-            //    opt.UseInMemoryDatabase("Employee"));
+            services.AddCors(options =>
+            {
+               options.AddPolicy("AllowMyOrigin",
+               //builder => builder.WithOrigins("http://localhost:3001/"));
+               builder => builder.AllowAnyOrigin());
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<Models.EmployeeContext>(options => options.UseSqlite("Data Source=database.db"));
@@ -55,7 +45,7 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise
             }
 
             app.UseHttpsRedirection();
-            //app.UseCors("AllowMyOrigin");
+            app.UseCors("AllowMyOrigin");
             app.UseMvc();
         }
     }

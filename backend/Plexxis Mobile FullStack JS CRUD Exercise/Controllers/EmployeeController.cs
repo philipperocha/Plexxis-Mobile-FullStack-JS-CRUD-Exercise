@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Models;
@@ -22,14 +21,14 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Controllers
             _context = context;
         }
 
-        // GET: api/Employee
+        // GET: api/Employee (This endpoint returns all employees)
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
             return await _context.Employees.ToListAsync();
         }
 
-        // GET: api/Employee/5
+        // GET: api/Employee/5 (This endpoint returns an employee based on his "id")
         [HttpGet("{id}")]
         public async Task<ActionResult<Employee>> GetEmployee(int id)
         {
@@ -43,7 +42,17 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Controllers
             return employee;
         }
 
-        // PUT: api/Employee/5
+        // POST: api/Employee (This endpoint add an employee. We should pass all parameters in the request's body)
+        [HttpPost]
+        public async Task<ActionResult<Employee>> AddEmployee(Employee employee)
+        {
+            _context.Employees.Add(employee);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetEmployee", new { id = employee.id }, employee);
+        }
+
+        // PUT: api/Employee/5 (This endpoint updates an employee. We should pass "id" on the route and parameters in the body)
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateEmployee(int id, Employee employee)
         {
@@ -73,17 +82,7 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Controllers
             return CreatedAtAction("GetEmployee", new { id = employee.id }, employee);
         }
 
-        // POST: api/Employee
-        [HttpPost]
-        public async Task<ActionResult<Employee>> AddEmployee(Employee employee)
-        {
-            _context.Employees.Add(employee);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetEmployee", new { id = employee.id }, employee);
-        }
-
-        // DELETE: api/Employee/5
+        // DELETE: api/Employee/5 (This endpoint removes an employee based on his "id")
         [HttpDelete("{id}")]
         public async Task<ActionResult<Employee>> DeleteEmployee(int id)
         {

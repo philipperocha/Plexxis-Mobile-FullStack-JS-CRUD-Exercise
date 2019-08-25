@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Models
 {
