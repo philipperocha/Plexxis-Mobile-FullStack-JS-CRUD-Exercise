@@ -6,7 +6,8 @@ class App extends React.Component {
   }
   
   componentWillMount = () => {
-    fetch('https://localhost:44368/api/employee')
+    fetch('https://localhost:5001/api/employee')
+    //fetch('https://localhost:44368/api/employee')
       .then(response => response.json())
       .then(employees => this.setState({ employees }))
   }
