@@ -45,7 +45,7 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Controllers
 
         // PUT: api/Employee/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmployee(int id, Employee employee)
+        public async Task<IActionResult> UpdateEmployee(int id, Employee employee)
         {
             if (id != employee.id)
             {
@@ -70,12 +70,12 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Controllers
                 }
             }
 
-            return NoContent();
+            return CreatedAtAction("GetEmployee", new { id = employee.id }, employee);
         }
 
         // POST: api/Employee
         [HttpPost]
-        public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
+        public async Task<ActionResult<Employee>> AddEmployee(Employee employee)
         {
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
