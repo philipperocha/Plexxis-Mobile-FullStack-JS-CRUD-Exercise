@@ -38,6 +38,7 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise
             //    opt.UseInMemoryDatabase("Employee"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddDbContext<Models.EmployeeContext>(options => options.UseSqlite("Data Source=database.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
