@@ -1,0 +1,17 @@
+.myTable {
+  height: 100%;
+  width: 100%;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.-pagination,
+.rt-body,
+.rt-tr-group,
+.rt-tr {
+flex: 1 0 auto;
+}
+
+.rt-table {
+flex: 100000 0 auto;
+}

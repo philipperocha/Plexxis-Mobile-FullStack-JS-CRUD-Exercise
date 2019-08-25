@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Image, Form, Button } from 'react-bootstrap';
+import { CustomTable } from '../components/CustomTable';
 import './Crud.css';
 
 class Crud extends Component {
@@ -38,7 +39,7 @@ class Crud extends Component {
                     </Col>
                     <Col xs={12} sm={9} className="col-wrapper text-center">
                         <div className='formContainer'>
-                            {this.props.table}
+                            <CustomTable employees={this.props.employees}/>
                         </div>
                     </Col>
                 </Row>

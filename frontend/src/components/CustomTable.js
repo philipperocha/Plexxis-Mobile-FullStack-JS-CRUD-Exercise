@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTable, useRowSelect } from 'react-table';
 import { TableStyle } from '../styles';
+import './CustomTable.css';
 
 //TableComponent receives data and columns as parameters and then returs a mounted table
 const TableComponent = ({ columns, data }) => {
@@ -12,7 +13,7 @@ const TableComponent = ({ columns, data }) => {
   } = useTable({ columns, data }, useRowSelect);
 
   return (
-    <table {...getTableProps()}>
+    <table {...getTableProps()} className='myTable'>
       {/* Head */}
       <thead>
         {headerGroups.map(headerGroup => (
@@ -42,7 +43,7 @@ const TableComponent = ({ columns, data }) => {
 }
 
 //CustomTable component defines the columns structure and pass "data" + "columns" to TableComponent via props
-export const CustomTable = () => {
+export const CustomTable = ({employees}) => {
   const columns = React.useMemo(() => [{
       Header: 'Employees',
       columns: [
@@ -67,53 +68,9 @@ export const CustomTable = () => {
     }], []
   );
 
-  const myJson =
-    [
-      {
-          "id": 1,
-          "name": "Philippe Rocha",
-          "code": null,
-          "profession": "Software Engineer",
-          "color": "gray",
-          "city": "Toronto, ON",
-          "branch": null,
-          "assigned": false
-      },
-      {
-          "id": 2,
-          "name": "John",
-          "code": null,
-          "profession": "Driver",
-          "color": null,
-          "city": "Toronto",
-          "branch": null,
-          "assigned": true
-      },
-      {
-          "id": 4,
-          "name": "Juan Sakai",
-          "code": null,
-          "profession": "CEO",
-          "color": "violet",
-          "city": "Etobicoke, ON",
-          "branch": null,
-          "assigned": false
-      },
-      {
-          "id": 5,
-          "name": "Bill",
-          "code": null,
-          "profession": "Engineer",
-          "color": "white",
-          "city": "Vancouver, ON",
-          "branch": null,
-          "assigned": false
-      }
-    ];
-
   return (
     <TableStyle>
-      <TableComponent columns={columns} data={myJson} />
+      <TableComponent columns={columns} data={employees}/>
     </TableStyle>
   )
 }

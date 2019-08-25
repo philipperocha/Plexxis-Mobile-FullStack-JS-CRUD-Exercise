@@ -1,8 +1,6 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { CustomNavbar } from './components/CustomNavbar';
 import Crud from './screens/Crud';
-import { CustomTable } from './components/CustomTable';
 
 class App extends React.Component {
   state = {
@@ -26,24 +24,7 @@ class App extends React.Component {
     return (
       <div>
         <CustomNavbar title={'Plexxis Software'}/>
-        <Crud table={<CustomTable/>}/>
-        <Container>
-          <h1>Plexxis Employees</h1>
-          {
-            employees.map(employee => (
-              <div key={employee.id}>
-                {
-                  Object.keys(employee).map(key => 
-                    <span key={key}>
-                      { key }:
-                      { employee[key] } 
-                    </span>
-                  )
-                }
-              </div>
-            ))
-          }
-        </Container>
+        <Crud employees={employees}/>
       </div>
     );
   }
