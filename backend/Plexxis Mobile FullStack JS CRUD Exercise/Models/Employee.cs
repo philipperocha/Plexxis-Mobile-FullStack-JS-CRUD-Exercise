@@ -16,21 +16,21 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Models
         public string branch { get; set; }
         public bool assigned { get; set; }
 
-        public Employee(string Name)
-        {
-            id = 0;
-            name = Name;
-            code = "000";
-            profession = "developer";
-            color = "red";
-            city = "Toronto";
-            branch = "Woodbridge";
-            assigned = false; 
-        }
+        // public Employee(string Name)
+        // {
+        //     id = 0;
+        //     name = Name;
+        //     code = "000";
+        //     profession = "developer";
+        //     color = "red";
+        //     city = "Toronto";
+        //     branch = "Woodbridge";
+        //     assigned = false; 
+        // }
 
-        public Employee()
-        {
-            new Employee("NewUser"); 
-        }
+        // public Employee()
+        // {
+        //     new Employee("NewUser"); 
+        // }
     }
 }
