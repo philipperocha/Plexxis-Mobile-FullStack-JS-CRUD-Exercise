@@ -27,5 +27,7 @@ namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Models
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
         }
+
+        public DbSet<Employee> Employees { get; set; }
     }
 }
