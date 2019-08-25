@@ -36,8 +36,10 @@ class Crud extends Component {
                             </Form>
                         </div>
                     </Col>
-                    <Col xs={12} sm={9} className="col-wrapper">
-                        <div className='formContainer'></div>
+                    <Col xs={12} sm={9} className="col-wrapper text-center">
+                        <div className='formContainer'>
+                            {this.props.table}
+                        </div>
                     </Col>
                 </Row>
             </Container>
