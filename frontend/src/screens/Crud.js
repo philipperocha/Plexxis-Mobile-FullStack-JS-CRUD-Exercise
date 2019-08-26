@@ -13,7 +13,18 @@ class Crud extends Component {
                     </Col>
                 </Row>
                 <Row className="show-grid">
-                    <Col xs={12} sm={3} className="col-wrapper">
+                    <Col sx={12} sm={12}>
+                        <Button
+                            variant="success"
+                            size="sm"
+                            onClick={() => this.props.showAddForm(true)}
+                        >
+                            Add employee
+                        </Button>
+                    </Col>
+                </Row>
+                <Row className="show-grid">
+                    {/* <Col xs={12} sm={3} className="col-wrapper">
                         <div className='formContainer'>
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
@@ -36,11 +47,12 @@ class Crud extends Component {
                                 </Button>
                             </Form>
                         </div>
-                    </Col>
-                    <Col xs={12} sm={9} className="col-wrapper text-center">
-                        <div className='formContainer'>
-                            <CustomTable employees={this.props.employees}/>
-                        </div>
+                    </Col> */}
+                    <Col xs={12} sm={12} className="col-wrapper text-center">
+                        <CustomTable
+                            employees={this.props.employees}
+                            showEditForm={this.props.showEditForm}
+                        />
                     </Col>
                 </Row>
             </Container>

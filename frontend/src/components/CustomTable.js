@@ -1,65 +1,36 @@
 import React from 'react';
-import { useTable, useRowSelect } from 'react-table';
-import { TableStyle } from '../styles';
-import './CustomTable.css';
+import ReactTable from 'react-table';
+import { Button } from 'react-bootstrap';
+import 'react-table/react-table.css';
 
-//TableComponent receives data and columns as parameters and then returs a mounted table
-const TableComponent = ({ columns, data }) => {
-  const {
-    getTableProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, data }, useRowSelect);
-
-  return (
-    <table {...getTableProps()} className='myTable'>
-      {/* Head */}
-      <thead>
-        {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      {/* Body */}
-      <tbody>
-        {rows.map((row) =>
-          prepareRow(row) || (
-            <tr {...row.getRowProps()}>
-              {row.cells.map(cell => {
-                return (
-                  <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                )
-              })}
-            </tr>
-          )
-        )}
-      </tbody>
-    </table>
-  );
-}
-
-//CustomTable component defines the columns structure and pass "data" + "columns" to TableComponent via props
-export const CustomTable = ({employees}) => {
-  const columns = React.useMemo(() => [{
-      Header: 'Employees',
+export const CustomTable = ({employees, showEditForm}) => {
+    const columns = React.useMemo(() => [{
+      Header: 'Plexxis Employees',
       columns: [
-        { Header: 'ID', accessor: 'id' },
+        { Header: 'ID', accessor: 'id', minWidth: 30, maxWidth: 60 },
         { Header: 'Name', accessor: 'name' },
         { Header: 'Code', accessor: 'code', show: false },
         { Header: 'Profession', accessor: 'profession' },
-        { Header: 'Color', accessor: 'color' },
+        { Header: 'Color', accessor: 'color', minWidth: 60, maxWidth: 80 },
         { Header: 'City', accessor: 'city' },
         { Header: 'Branch', accessor: 'branch' },
         { Header: 'Assigned', accessor: 'assigned', show: false },
-        { Header: '', id: 'options', Cell: ({ row }) => {
+        { Header: '', id: 'options',  minWidth: 120, Cell: ({ row }) => {
             return ( 
               <div>
-                <input type="submit" value="Update" onClick={() => alert("Updting: " + row.index)} />
-                <input type="submit" value="Delete" onClick={() => alert("Deleting: " + row.index)} />
+                <Button
+                  variant="info"
+                  size="sm"
+                  onClick={() => {
+                    showEditForm(true);
+                    console.log("Updting: " + row);
+                  }}
+                >
+                  Update
+                </Button>
+                <Button className="del" variant="danger" size="sm" onClick={() => alert("Updting: " + row.index)}>
+                  Delete
+                </Button>
               </div>
             );
           }
@@ -69,8 +40,14 @@ export const CustomTable = ({employees}) => {
   );
 
   return (
-    <TableStyle>
-      <TableComponent columns={columns} data={employees}/>
-    </TableStyle>
+    <ReactTable
+      className='-striped -highlight'
+      data={employees} // should default to []
+      pages={-1} // should default to -1 (which means we don't know how many pages we have)
+      loading={false}
+      columns={columns}
+      defaultPageSize={10}
+      style={{ borderColor: '#bfbfbf', borderRadius: '4px', borderStyle: 'rigid' }}
+    />
   )
 }

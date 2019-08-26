@@ -1,10 +1,13 @@
 import React from 'react';
 import { CustomNavbar } from './components/CustomNavbar';
 import Crud from './screens/Crud';
+import './App.css';
 
 class App extends React.Component {
   state = {
-    employees: []
+    employees: [],
+    addFormVisible: false,
+    editFormVisible: false
   }
   
   componentWillMount = () => {
@@ -13,6 +16,14 @@ class App extends React.Component {
       .then(response => response.json())
       .then(employees => this.setState({ employees }))
   }
+
+  showAddEmployeeForm = (value) => this.setState({ addFormVisible: value });
+
+  //hideAddEmployeeForm = () => this.setState({ addFormVisible: false });
+
+  showEditEmployeeForm = (value) => this.setState({ editFormVisible: value });
+
+  //hideEditEmployeeForm = () => this.setState({ editFormVisible: false });
 
   render() {
     const {
@@ -24,7 +35,11 @@ class App extends React.Component {
     return (
       <div>
         <CustomNavbar title={'Plexxis Software'}/>
-        <Crud employees={employees}/>
+        <Crud
+          employees={employees}
+          showAddForm={this.showAddEmployeeForm}
+          showEditForm={this.showEditEmployeeForm}
+        />
       </div>
     );
   }
