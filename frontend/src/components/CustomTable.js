@@ -3,7 +3,7 @@ import ReactTable from 'react-table';
 import { Button } from 'react-bootstrap';
 import 'react-table/react-table.css';
 
-export const CustomTable = ({employees, showEditForm}) => {
+export const CustomTable = ({employees, showEditForm, setEmployee}) => {
     const columns = React.useMemo(() => [{
       Header: 'Plexxis Employees',
       columns: [
@@ -15,7 +15,12 @@ export const CustomTable = ({employees, showEditForm}) => {
         { Header: 'City', accessor: 'city' },
         { Header: 'Branch', accessor: 'branch' },
         { Header: 'Assigned', accessor: 'assigned', show: false },
-        { Header: '', id: 'options',  minWidth: 120, Cell: ({ row }) => {
+        { Header: '', id: 'options',  width: 140, Cell: (cell) => {
+
+            const {id, name, profession, color, city, branch} = cell.row;
+            const emp = {id, name, profession, color, city, branch};
+            //console.log(emp);
+
             return ( 
               <div>
                 <Button
@@ -23,12 +28,12 @@ export const CustomTable = ({employees, showEditForm}) => {
                   size="sm"
                   onClick={() => {
                     showEditForm(true);
-                    console.log("Updting: " + row);
+                    setEmployee(emp);
                   }}
                 >
                   Update
                 </Button>
-                <Button className="del" variant="danger" size="sm" onClick={() => alert("Updting: " + row.index)}>
+                <Button className="del" variant="danger" size="sm" onClick={() => alert("Updting: " + emp.id)}>
                   Delete
                 </Button>
               </div>
@@ -42,7 +47,7 @@ export const CustomTable = ({employees, showEditForm}) => {
   return (
     <ReactTable
       className='-striped -highlight'
-      data={employees} // should default to []
+      data={employees}
       pages={-1} // should default to -1 (which means we don't know how many pages we have)
       loading={false}
       columns={columns}

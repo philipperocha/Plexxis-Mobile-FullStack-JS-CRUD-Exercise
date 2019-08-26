@@ -7,7 +7,8 @@ class App extends React.Component {
   state = {
     employees: [],
     addFormVisible: false,
-    editFormVisible: false
+    editFormVisible: false,
+    currentEmployee: {}
   }
   
   componentWillMount = () => {
@@ -25,9 +26,15 @@ class App extends React.Component {
 
   //hideEditEmployeeForm = () => this.setState({ editFormVisible: false });
 
+  setCurrentEmployee = (emp) => this.setState({ currentEmployee: emp });
+
+  cancelEditEmployee = () => this.setState({ addFormVisible: false, editFormVisible: false, currentEmployee: {} });
+
   render() {
     const {
-      employees
+      employees,
+      addFormVisible,
+      editFormVisible
     } = this.state;
 
     console.log(this.state);
@@ -39,6 +46,10 @@ class App extends React.Component {
           employees={employees}
           showAddForm={this.showAddEmployeeForm}
           showEditForm={this.showEditEmployeeForm}
+          setEmployee={this.setCurrentEmployee}
+          addFormVisible={addFormVisible}
+          editFormVisible={editFormVisible}
+          cancelEditEmployee={this.cancelEditEmployee}
         />
       </div>
     );
