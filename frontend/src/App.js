@@ -15,13 +15,14 @@ class App extends React.Component {
     currentEmployee: {},
     errorMessage: '',
     successMessage: '',
-    loading: false
+    loading: true
   }
   
   componentWillMount = () => {
     fetch(url)
       .then(response => response.json())
-      .then(employees => this.setState({ employees }));
+      .then(employees => this.setState({ employees, loading: false }))
+      .catch(err => this.setState({errorMessage: 'Fetch error...Probably the API is not available.', loading: false}));
   }
 
   showAddEmployeeForm = (value) => this.setState({ addFormVisible: value });
@@ -36,10 +37,7 @@ class App extends React.Component {
   
   onCloseSuccessMSG = () => this.setState({successMessage: ''});
 
-	handleChange = (event) => {
-    //console.log(event);
-    this.setState({ currentEmployee: {...this.state.currentEmployee, [event.target.name]: event.target.value} });
-  }
+	handleChange = (event) => this.setState({ currentEmployee: {...this.state.currentEmployee, [event.target.name]: event.target.value} });
 
   sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -56,7 +54,8 @@ class App extends React.Component {
           this.setState({employees: updatedEmployees, addFormVisible: false});
         }
         return result; 
-      });
+      })
+      .catch(err => console.log(err));
   }
 
   //Update employee request
@@ -70,7 +69,8 @@ class App extends React.Component {
           this.setState({employees: updatedEmployees, editFormVisible: false});
         }
         return res;
-      });
+      })
+      .catch(err => console.log(err));
   }
 
   //Delete employee request
@@ -85,7 +85,8 @@ class App extends React.Component {
           this.setState({employees: updatedEmployees});
         }
         return res;
-      });
+      })
+      .catch(err => console.log(err));
   }
 
   //Custom request method
@@ -94,7 +95,7 @@ class App extends React.Component {
 
     console.log(method, url, successMsg);
     //It gives a better experience to the user in case of fast response
-    await this.sleep(800);
+    await this.sleep(500);
 
     const body = { 
       method: method, 
@@ -109,13 +110,13 @@ class App extends React.Component {
           console.log('success => ', res);
           return res;
         } else {
-          this.setState({errorMessage: `Request rejected with status ${res.status}`, loading: false});
+          this.setState({errorMessage: `Request rejected with status ${res.status}`, loading: false, addFormVisible: false, editFormVisible: false});
           throw Error();
         }
       })
       .catch(err => {
         console.log(err);
-        this.setState({errorMessage: err.message, loading: false});
+        this.setState({errorMessage: err.message, loading: false, addFormVisible: false, editFormVisible: false});
         return err;
       });
   }
@@ -135,7 +136,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <CustomNavbar title={'Plexxis Software - FullStack Exercise'}/>
+        <CustomNavbar title={'Plexxis FullStack Exercise - Philippe Rocha'}/>
         <Crud
           employees={employees}
           showAddForm={this.showAddEmployeeForm}
