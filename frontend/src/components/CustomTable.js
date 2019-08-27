@@ -2,6 +2,7 @@ import React from 'react';
 import ReactTable from 'react-table';
 import { Button } from 'react-bootstrap';
 import 'react-table/react-table.css';
+import Pagination from './Pagination';
 
 // Custom Table
 export const CustomTable = ({employees, showEditForm, setEmployee, deleteEmployee, loading}) => {
@@ -20,7 +21,6 @@ export const CustomTable = ({employees, showEditForm, setEmployee, deleteEmploye
 
             const {id, name, profession, color, city, branch} = cell.row;
             const emp = {id, name, profession, color, city, branch};
-            console.log(loading);
 
             return ( 
               <div>
@@ -31,8 +31,8 @@ export const CustomTable = ({employees, showEditForm, setEmployee, deleteEmploye
                 >
                   Update
                 </Button>
-                <Button className="del" disabled={loading} variant="danger" size="sm" onClick={() => deleteEmployee(emp.id)}>
-                  {loading ? 'Loading...' : 'Delete'}
+                <Button className="del" variant="danger" size="sm" onClick={() => deleteEmployee(emp.id)}>
+                  Delete
                 </Button>
               </div>
             );
@@ -47,10 +47,11 @@ export const CustomTable = ({employees, showEditForm, setEmployee, deleteEmploye
       className='-striped -highlight'
       data={employees}
       pages={-1} // should default to -1 (which means we don't know how many pages we have)
-      loading={false}
+      loading={loading}
       columns={columns}
       defaultPageSize={10}
       style={{ borderColor: '#bfbfbf', borderRadius: '4px', borderStyle: 'rigid' }}
+      PaginationComponent={Pagination}
     />
   )
 }

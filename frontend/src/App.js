@@ -2,6 +2,7 @@ import React from 'react';
 import { CustomNavbar } from './components/CustomNavbar';
 import Crud from './screens/Crud';
 import './App.css';
+import "./styles.css";
 
 const url = 'https://localhost:5001/api/employee';
 //const url = 'https://localhost:44368/api/employee';
@@ -74,6 +75,7 @@ class App extends React.Component {
 
   //Delete employee request
   deleteEmployee = async (id) => {
+    console.log("ID P DELETAR =>", id);
     await this.myRequest('DELETE', `${url}/${id}`, 'deleted')
       .then(res => {
         if (res.ok) {
@@ -94,12 +96,11 @@ class App extends React.Component {
     //It gives a better experience to the user in case of fast response
     await this.sleep(800);
 
-    const body = (method === 'DELETE') ? {} : 
-      { 
-        method: method, 
-        body: JSON.stringify({...this.state.currentEmployee}), 
-        headers: {'Content-Type': 'application/json'}
-      };
+    const body = { 
+      method: method, 
+      body: JSON.stringify({...this.state.currentEmployee}), 
+      headers: {'Content-Type': 'application/json'}
+    };
 
     return fetch(url, body)
       .then(res => {
