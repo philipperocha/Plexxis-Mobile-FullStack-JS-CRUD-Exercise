@@ -27,3 +27,6 @@ Create a simple but __impressive__ (looks good, works well, has intuitive design
     * Change button's state to "loading" whenever waiting for an API response
 
 If you are running the backend project on VSCode, probably it should be run on "localhost:5001" instead of "localhost:44368" (Visual Studio). The frontend Url call is defined on App.js line 7.
+
+
+![Alt text](/frontend/public/1.png)
