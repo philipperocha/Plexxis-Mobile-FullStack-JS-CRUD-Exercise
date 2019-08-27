@@ -9,7 +9,7 @@ using Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Models;
 
 namespace Plexxis_Mobile_FullStack_JS_CRUD_Exercise.Controllers
 {
-    [EnableCors("AllowMyOrigin")]
+    [EnableCors("AllowOrigin")]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase
