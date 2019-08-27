@@ -16,14 +16,14 @@ Create a simple but __impressive__ (looks good, works well, has intuitive design
         * Fetch all employees ==> GET: api/Employee
         * Fetch an employee   ==> GET: api/Employee/{id}
         * Add a new employee  ==> POST: api/Employee  (We should pass a body with parameters)
-        * Update an employee  ==> PUT: api/Employee/{id}  (We should pass a body with parameters)
+        * Update an employee  ==> PUT: api/Employee/{id}  (We should pass a body with parameters including "id")
         * Delete an employee  ==> DELETE: api/Employee/{id}
     * Update Cors to anable all methods for different origins
 * Frontend
     * Using react-bootstrap + styled-components libraries for layout and components
     * Using react-table to show all information to the user
     * Added alerts in case of bad-requests, errors or sucessful requests
-    * All application's state is being passed via props from parent to children components (No Redux)
+    * All application's state is being passed via props from the parent to children components (No Redux)
     * Change button's state to "loading" whenever waiting for an API response
 
-If you are running the backend project on VSCode, probably it should be run on "localhost:5001" instead of "localhost:44368" (Visual Studio). The front end Url call is defined on App.js line 7.
+If you are running the backend project on VSCode, probably it should be run on "localhost:5001" instead of "localhost:44368" (Visual Studio). The frontend Url call is defined on App.js line 7.
