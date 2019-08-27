@@ -34,4 +34,4 @@ Presentation
 ![Alt text](/frontend/public/1.png)
 
 Creating an user
-![Alt text](/frontend/public/1.png)
+![Alt text](/frontend/public/2.png)
