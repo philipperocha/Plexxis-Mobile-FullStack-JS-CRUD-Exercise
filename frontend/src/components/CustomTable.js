@@ -3,7 +3,8 @@ import ReactTable from 'react-table';
 import { Button } from 'react-bootstrap';
 import 'react-table/react-table.css';
 
-export const CustomTable = ({employees, showEditForm, setEmployee}) => {
+// Custom Table
+export const CustomTable = ({employees, showEditForm, setEmployee, deleteEmployee, loading}) => {
     const columns = React.useMemo(() => [{
       Header: 'Plexxis Employees',
       columns: [
@@ -19,29 +20,26 @@ export const CustomTable = ({employees, showEditForm, setEmployee}) => {
 
             const {id, name, profession, color, city, branch} = cell.row;
             const emp = {id, name, profession, color, city, branch};
-            //console.log(emp);
+            console.log(loading);
 
             return ( 
               <div>
-                <Button
-                  variant="info"
-                  size="sm"
-                  onClick={() => {
+                <Button variant="info" size="sm" onClick={() => {
                     showEditForm(true);
                     setEmployee(emp);
                   }}
                 >
                   Update
                 </Button>
-                <Button className="del" variant="danger" size="sm" onClick={() => alert("Updting: " + emp.id)}>
-                  Delete
+                <Button className="del" disabled={loading} variant="danger" size="sm" onClick={() => deleteEmployee(emp.id)}>
+                  {loading ? 'Loading...' : 'Delete'}
                 </Button>
               </div>
             );
           }
         },
       ]
-    }], []
+    }],[]
   );
 
   return (
